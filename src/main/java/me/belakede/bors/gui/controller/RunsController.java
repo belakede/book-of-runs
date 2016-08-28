@@ -21,8 +21,6 @@ import java.util.ResourceBundle;
 public class RunsController implements Initializable {
 
     @FXML
-    ToolBar toolBar;
-    @FXML
     TextField runId;
     @FXML
     ScrollPane scrollPane;
@@ -57,6 +55,7 @@ public class RunsController implements Initializable {
             statusBar.textProperty().unbind();
             statusBar.progressProperty().unbind();
             details.componentsDetailsProperty().addAll(task.getValue().get());
+            runId.clear();
         });
         new Thread(task).start();
     }
@@ -65,7 +64,6 @@ public class RunsController implements Initializable {
         scrollPane.viewportBoundsProperty().addListener((ov, oldBounds, bounds) -> {
             runContainer.setPrefWidth(bounds.getWidth());
             runContainer.setPrefHeight(bounds.getHeight());
-            toolBar.setPrefWidth(bounds.getWidth());
         });
     }
 

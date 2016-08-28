@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<BorderPane fx:controller="me.belakede.bors.gui.controller.StatisticsController" xmlns:fx="http://javafx.com/fxml" stylesheets="@css/statistics.css">
+    <center>
+        <Label text="Hello World!" styleClass="helloWorld"></Label>
+    </center>
+</BorderPane>

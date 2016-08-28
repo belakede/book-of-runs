@@ -13,7 +13,7 @@ public class BookOfRuns extends Application {
     }
 
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("gui/runs.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("gui/main.fxml"));
 
         Scene scene = new Scene(root, 500, 650);
 

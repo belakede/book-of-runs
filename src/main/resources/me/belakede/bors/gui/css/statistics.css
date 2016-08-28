@@ -1,0 +1,8 @@
+.helloWorld {
+    -fx-text-fill: #777777;
+    -fx-font-family: sans-serif;
+    -fx-font-size: 48px;
+    -fx-font-weight: bolder;
+    -fx-stroke: #777777;
+    -fx-padding: 10px 0px 0px 15px;
+}
