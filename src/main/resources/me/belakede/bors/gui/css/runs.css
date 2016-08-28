@@ -1,0 +1,133 @@
+ToolBar .add-run TextField {
+    -fx-pref-width: 80px;
+    -fx-background-radius: 3 0 0 3, 3 0 0 3, 2 0 0 2, 1 0 0 1;
+}
+ToolBar .add-run Button {
+    -fx-background-radius: 0 3 3 0, 0 3 3 0, 0 2 2 0, 0 1 1 0;
+}
+ScrollPane {
+    -fx-border-style: none;
+    -fx-border-width: 0px;
+    -fx-background-color: transparent;
+}
+.date-headline {
+    -fx-text-fill: #777777;
+    -fx-font-family: sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bolder;
+    -fx-stroke: #777777;
+    -fx-padding: 10px 0px 0px 15px;
+}
+.run-group {
+    -fx-padding: 15px;
+    -fx-hgap: 15px;
+    -fx-vgap: 15px;
+}
+.run-summary {
+    -fx-background-color: #fefabc;
+    -fx-padding: 15px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #555555;
+    -fx-min-width: 215px;
+    -fx-max-width: 215px;
+    -fx-pref-width: 215px;
+    -fx-effect: dropshadow(three-pass-box, rgba(125, 125, 125, 0.8), 7, 0, 0, 0);
+}
+.run-summary.restarted {
+    -fx-background-color: #d0e2f2;
+}
+.run-summary.analysis-pending {
+    -fx-background-color: #f1c1c0;
+}
+.run-summary.work-in-progress {
+    -fx-background-color: #f9dfba;
+}
+.run-summary.ready {
+    -fx-background-color: #c9e8c9;
+}
+.run-summary .run-id Label {
+    -fx-text-fill: #555555;
+    -fx-font-size: 140%;
+    -fx-pref-width: 165px;
+    -fx-min-width: 165px;
+}
+.run-summary .run-id Button {
+    -fx-background-color: transparent;
+    -fx-content-display: right;
+    -fx-pref-width: 50px;
+}
+.run-summary .run-id Button Glyph {
+    -fx-text-fill: #777777;
+}
+.run-summary .run-id Button:hover Glyph {
+    -fx-text-fill: #555555;
+    -fx-cursor: hand;
+}
+.run-summary .run-badge {
+    -fx-font-size: 75%;
+    -fx-background-color: #555555;
+    -fx-text-fill: #fefefe;
+    -fx-background-insets: 3px 3px 3px 0px;
+    -fx-padding: 6px 6px 6px 3px;
+    -fx-background-radius: 4px;
+}
+.separator {
+    -fx-padding: 3px 0px 5px 0px;
+}
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-border-color: #dddddd;
+}
+.component-group {
+    -fx-vgap: 10px;
+}
+.component-summary {
+    -fx-pref-width: 185px;
+}
+.component-summary .status-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 30px;
+    -fx-content-display: left;
+}
+.component-summary .status-button .something-went-wrong {
+    -fx-text-fill: #777777;
+}
+.component-summary .status-button .analysis-pending {
+    -fx-text-fill: #d9534f;
+}
+.component-summary .status-button .running,
+.component-summary .status-button .work-in-progress {
+    -fx-text-fill: #f0ad4e;
+}
+.component-summary .status-button .need-to-restart {
+    -fx-text-fill: #337ab7;
+}
+.component-summary .status-button .done {
+    -fx-text-fill: #5cb85c;
+}
+.component-label {
+    -fx-padding: 4px 3px 3px 0px;
+    -fx-min-width: 110px;
+    -fx-pref-width: 125px;
+    -fx-text-fill: #777777;
+}
+.component-details {
+    -fx-background-color: transparent;
+    -fx-pref-width: 30px;
+    -fx-content-display: right;
+}
+.component-details .component-info {
+    -fx-text-fill: #5bc0de;
+}
+.component-details .component-info:hover {
+    -fx-text-fill: #31b0d5;
+    -fx-cursor: hand;
+}
+.run-footer {
+    -fx-padding: 15px 0 0 0;
+}
+.run-footer Label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 80%;
+}

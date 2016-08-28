@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import org.controlsfx.glyphfont.Glyph?>
+<?import javafx.scene.layout.BorderPane?>
+
+<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" styleClass="run-summary">
+    <center>
+        <VBox>
+            <HBox styleClass="run-id">
+                <Label fx:id="runId" />
+                <Button>
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="EXPAND"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            <FlowPane>
+                <Label styleClass="run-badge" fx:id="environment"/>
+                <Label styleClass="run-badge" fx:id="operationSystem"/>
+                <Label styleClass="run-badge" fx:id="secure"/>
+                <Label styleClass="run-badge" fx:id="kerberosServerType"/>
+            </FlowPane>
+            <Separator />
+            <VBox fx:id="componentHolder" styleClass="component-group"/>
+        </VBox>
+    </center>
+    <bottom>
+        <BorderPane styleClass="run-footer">
+            <left>
+                <Label fx:id="startTime" />
+            </left>
+            <center>
+                <Label fx:id="releaseName" />
+            </center>
+            <right>
+                <Label fx:id="buildNumber" />
+            </right>
+        </BorderPane>
+    </bottom>
+</fx:root>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import org.controlsfx.glyphfont.Glyph?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import org.controlsfx.control.StatusBar?>
+
+<BorderPane fx:controller="me.belakede.bors.gui.controller.RunsController" xmlns:fx="http://javafx.com/fxml" stylesheets="@css/runs.css">
+    <top>
+        <ToolBar fx:id="toolBar">
+            <Label text="Runs" />
+            <Separator orientation="VERTICAL" />
+            <HBox styleClass="add-run">
+                <TextField fx:id="runId" />
+                <Button onAction="#addNewRun">
+                    <graphic>
+                        <Glyph fontFamily="FontAwesome" icon="PLUS"/>
+                    </graphic>
+                </Button>
+            </HBox>
+        </ToolBar>
+    </top>
+
+    <center>
+        <ScrollPane vbarPolicy="NEVER" hbarPolicy="NEVER" minWidth="235" fx:id="scrollPane">
+        <VBox>
+            <FlowPane styleClass="run-group" fx:id="runContainer">
+
+            </FlowPane>
+        </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <StatusBar fx:id="statusBar"/>
+    </bottom>
+</BorderPane>
