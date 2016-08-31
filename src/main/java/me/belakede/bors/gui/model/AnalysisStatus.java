@@ -1,7 +1,7 @@
 package me.belakede.bors.gui.model;
 
 
-import me.belakede.bors.persistence.model.Status;
+import me.belakede.bors.persistence.domain.Status;
 import org.controlsfx.glyphfont.FontAwesome;
 
 public class AnalysisStatus {

@@ -2,8 +2,8 @@ package me.belakede.bors.gui.task;
 
 import javafx.concurrent.Task;
 import me.belakede.bors.gui.model.*;
-import me.belakede.bors.persistence.model.Environment;
-import me.belakede.bors.persistence.model.KerberosServerType;
+import me.belakede.bors.persistence.domain.Environment;
+import me.belakede.bors.persistence.domain.KerberosServerType;
 
 public class RunDetailsCollectorTask extends Task<RunDetails> {
 

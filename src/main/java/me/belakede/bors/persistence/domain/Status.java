@@ -1,4 +1,4 @@
-package me.belakede.bors.persistence.model;
+package me.belakede.bors.persistence.domain;
 
 public enum Status {
 

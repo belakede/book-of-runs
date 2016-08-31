@@ -4,8 +4,8 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableSet;
-import me.belakede.bors.persistence.model.Environment;
-import me.belakede.bors.persistence.model.KerberosServerType;
+import me.belakede.bors.persistence.domain.Environment;
+import me.belakede.bors.persistence.domain.KerberosServerType;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;

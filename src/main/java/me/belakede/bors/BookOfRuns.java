@@ -1,25 +1,13 @@
 package me.belakede.bors;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class BookOfRuns extends Application {
+@SpringBootApplication
+public class BookOfRuns {
 
     public static void main(String[] args) {
-        launch(args);
+        SpringApplication.run(BookOfRuns.class, args);
     }
 
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("gui/main.fxml"));
-
-        Scene scene = new Scene(root, 500, 650);
-
-        stage.setTitle("Book of Runs");
-        stage.setMinWidth(250);
-        stage.setScene(scene);
-        stage.show();
-    }
 }
