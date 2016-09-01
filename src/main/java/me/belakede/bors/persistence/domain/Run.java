@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "runs")
 public class Run implements Serializable {
 
     @Id
@@ -22,7 +21,7 @@ public class Run implements Serializable {
 
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
-    private KerberosServerType serverType;
+    private KerberosServerType kerberosServerType;
 
     @Column(nullable = false, updatable = false)
     private Date started;
@@ -39,10 +38,10 @@ public class Run implements Serializable {
     public Run() {
     }
 
-    public Run(String operationSystem, Environment environment, KerberosServerType serverType, Date started, String releaseName, Integer buildNumber) {
+    public Run(String operationSystem, Environment environment, KerberosServerType kerberosServerType, Date started, String releaseName, Integer buildNumber) {
         this.operationSystem = operationSystem;
         this.environment = environment;
-        this.serverType = serverType;
+        this.kerberosServerType = kerberosServerType;
         this.started = started;
         this.releaseName = releaseName;
         this.buildNumber = buildNumber;
@@ -72,12 +71,12 @@ public class Run implements Serializable {
         this.environment = environment;
     }
 
-    public KerberosServerType getServerType() {
-        return serverType;
+    public KerberosServerType getKerberosServerType() {
+        return kerberosServerType;
     }
 
-    public void setServerType(KerberosServerType serverType) {
-        this.serverType = serverType;
+    public void setKerberosServerType(KerberosServerType kerberosServerType) {
+        this.kerberosServerType = kerberosServerType;
     }
 
     public Date getStarted() {
@@ -119,14 +118,14 @@ public class Run implements Serializable {
 
         Run run = (Run) o;
 
-        return operationSystem.equals(run.operationSystem) && environment == run.environment && serverType == run.serverType && releaseName.equals(run.releaseName) && buildNumber.equals(run.buildNumber);
+        return operationSystem.equals(run.operationSystem) && environment == run.environment && kerberosServerType == run.kerberosServerType && releaseName.equals(run.releaseName) && buildNumber.equals(run.buildNumber);
     }
 
     @Override
     public int hashCode() {
         int result = operationSystem.hashCode();
         result = 31 * result + environment.hashCode();
-        result = 31 * result + serverType.hashCode();
+        result = 31 * result + kerberosServerType.hashCode();
         result = 31 * result + releaseName.hashCode();
         result = 31 * result + buildNumber.hashCode();
         return result;

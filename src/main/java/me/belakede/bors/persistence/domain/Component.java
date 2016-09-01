@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "components")
 public class Component implements Serializable {
 
     @Id
@@ -21,6 +20,9 @@ public class Component implements Serializable {
 
     @Column(nullable = false)
     private Integer resultId;
+
+    @OneToMany(mappedBy = "component")
+    private List<Split> splits;
 
     public Component() {
     }
