@@ -12,6 +12,9 @@ public class Run implements Serializable {
     @GeneratedValue
     private Long id;
 
+    @Column(nullable = false, updatable = false)
+    private Integer runId;
+
     @Column(nullable = false, length = 100)
     private String operationSystem;
 
@@ -53,6 +56,14 @@ public class Run implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getRunId() {
+        return runId;
+    }
+
+    public void setRunId(Integer runId) {
+        this.runId = runId;
     }
 
     public String getOperationSystem() {
