@@ -21,7 +21,7 @@ public class Component implements Serializable {
     @Column(nullable = false)
     private Integer resultId;
 
-    @OneToMany(mappedBy = "component")
+    @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
     private List<Split> splits;
 
     public Component() {
@@ -59,6 +59,14 @@ public class Component implements Serializable {
         this.resultId = resultId;
     }
 
+    public List<Split> getSplits() {
+        return splits;
+    }
+
+    public void setSplits(List<Split> splits) {
+        this.splits = splits;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,7 +75,6 @@ public class Component implements Serializable {
         Component component = (Component) o;
 
         return run != null ? run.equals(component.run) : component.run == null && (name != null ? name.equals(component.name) : component.name == null && (resultId != null ? resultId.equals(component.resultId) : component.resultId == null));
-
     }
 
     @Override

@@ -18,12 +18,12 @@ public class Run implements Serializable {
     @Column(nullable = false, length = 100)
     private String operationSystem;
 
-    @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private Environment environment;
 
-    @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private KerberosServerType kerberosServerType;
 
     @Column(nullable = false, updatable = false)
@@ -35,7 +35,7 @@ public class Run implements Serializable {
     @Column(nullable = false, updatable = false)
     private Integer buildNumber;
 
-    @OneToMany(mappedBy = "run")
+    @OneToMany(mappedBy = "run", cascade = CascadeType.ALL)
     private List<Component> components;
 
     public Run() {

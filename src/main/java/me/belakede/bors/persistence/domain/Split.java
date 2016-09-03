@@ -18,10 +18,10 @@ public class Split implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private Component component;
 
-    @OneToMany(mappedBy = "split")
+    @OneToMany(mappedBy = "split", cascade = CascadeType.ALL)
     private List<Job> jobs;
 
-    @OneToMany(mappedBy = "split", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "split", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<SplitTestcase> splitTestcases;
 
     @Enumerated(value = EnumType.STRING)
