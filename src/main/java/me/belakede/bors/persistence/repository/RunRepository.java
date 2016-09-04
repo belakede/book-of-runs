@@ -4,9 +4,11 @@ import me.belakede.bors.persistence.domain.Environment;
 import me.belakede.bors.persistence.domain.KerberosServerType;
 import me.belakede.bors.persistence.domain.Run;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface RunRepository extends JpaRepository<Run, Long> {
 
     List<Run> findByOperationSystem(String operationSystem);

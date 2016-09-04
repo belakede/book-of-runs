@@ -11,10 +11,10 @@ public class Component implements Serializable {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false, updatable = false, length = 50)
+    @Column(nullable = false, unique = true, updatable = false, length = 50)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private Long componentId;
 
     public Component() {
