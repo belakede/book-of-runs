@@ -20,6 +20,10 @@ public class AnalysisStatusFactory {
         CACHE.put(Status.DONE, new AnalysisStatus(Status.DONE, "done", FontAwesome.Glyph.CHECK));
     }
 
+    public static AnalysisStatus getByStatus(Status status) {
+        return CACHE.getOrDefault(status, getSomethingWentWrongStatus());
+    }
+
     public static AnalysisStatus getDefaultStatus() {
         return CACHE.get(Status.DEFAULT);
     }
