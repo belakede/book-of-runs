@@ -36,7 +36,7 @@ public class Run implements Serializable {
     private Integer buildNumber;
 
     @OneToMany(mappedBy = "run", cascade = CascadeType.ALL)
-    private List<Component> components;
+    private List<RunComponent> runComponents;
 
     public Run() {
     }
@@ -114,12 +114,12 @@ public class Run implements Serializable {
         this.buildNumber = buildNumber;
     }
 
-    public List<Component> getComponents() {
-        return components;
+    public List<RunComponent> getRunComponents() {
+        return runComponents;
     }
 
-    public void setComponents(List<Component> components) {
-        this.components = components;
+    public void setRunComponents(List<RunComponent> runComponents) {
+        this.runComponents = runComponents;
     }
 
     @Override

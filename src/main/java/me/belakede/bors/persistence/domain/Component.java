@@ -11,18 +11,11 @@ public class Component implements Serializable {
     @GeneratedValue
     private Long id;
 
-    @JoinColumn
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Run run;
-
     @Column(nullable = false, updatable = false, length = 50)
     private String name;
 
     @Column(nullable = false)
-    private Integer resultId;
-
-    @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
-    private List<Split> splits;
+    private Long componentId;
 
     public Component() {
     }
@@ -35,14 +28,6 @@ public class Component implements Serializable {
         this.id = id;
     }
 
-    public Run getRun() {
-        return run;
-    }
-
-    public void setRun(Run run) {
-        this.run = run;
-    }
-
     public String getName() {
         return name;
     }
@@ -51,37 +36,13 @@ public class Component implements Serializable {
         this.name = name;
     }
 
-    public Integer getResultId() {
-        return resultId;
+    public Long getComponentId() {
+        return componentId;
     }
 
-    public void setResultId(Integer resultId) {
-        this.resultId = resultId;
+    public void setComponentId(Long componentId) {
+        this.componentId = componentId;
     }
 
-    public List<Split> getSplits() {
-        return splits;
-    }
 
-    public void setSplits(List<Split> splits) {
-        this.splits = splits;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Component component = (Component) o;
-
-        return run != null ? run.equals(component.run) : component.run == null && (name != null ? name.equals(component.name) : component.name == null && (resultId != null ? resultId.equals(component.resultId) : component.resultId == null));
-    }
-
-    @Override
-    public int hashCode() {
-        int result = run != null ? run.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (resultId != null ? resultId.hashCode() : 0);
-        return result;
-    }
 }

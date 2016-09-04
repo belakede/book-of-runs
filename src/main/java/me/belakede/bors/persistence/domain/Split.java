@@ -16,7 +16,7 @@ public class Split implements Serializable {
 
     @JoinColumn
     @ManyToOne(fetch = FetchType.EAGER)
-    private Component component;
+    private RunComponent runComponent;
 
     @OneToMany(mappedBy = "split", cascade = CascadeType.ALL)
     private List<Job> jobs;
@@ -57,12 +57,12 @@ public class Split implements Serializable {
         this.splitNumber = splitNumber;
     }
 
-    public Component getComponent() {
-        return component;
+    public RunComponent getRunComponent() {
+        return runComponent;
     }
 
-    public void setComponent(Component component) {
-        this.component = component;
+    public void setRunComponent(RunComponent runComponent) {
+        this.runComponent = runComponent;
     }
 
     public List<Job> getJobs() {
@@ -136,14 +136,14 @@ public class Split implements Serializable {
 
         Split split = (Split) o;
 
-        return splitNumber.equals(split.splitNumber) && component.equals(split.component);
+        return splitNumber.equals(split.splitNumber) && runComponent.equals(split.runComponent);
 
     }
 
     @Override
     public int hashCode() {
         int result = splitNumber.hashCode();
-        result = 31 * result + component.hashCode();
+        result = 31 * result + runComponent.hashCode();
         return result;
     }
 }
